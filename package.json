@@ -4,14 +4,17 @@
   "description": "Clean Arch NodeJs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "lint-staged":{
-    "*.js": ["standard"]
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "repository": {
@@ -25,6 +28,7 @@
   },
   "homepage": "https://github.com/leandrodpaula/clean-node-api#readme",
   "devDependencies": {
+    "jest": "^27.1.0",
     "lint-staged": "^11.1.2",
     "standard": "^16.0.3"
   }
